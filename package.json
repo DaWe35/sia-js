@@ -7,6 +7,7 @@
   "license": "MIT",
   "dependencies": {
     "BigInt": "^5.5.3",
+    "big-integer": "^1.6.48",
     "big-number": "^2.0.0",
     "bignumber.js": "^9.0.0",
     "blake2b": "^2.1.3",
