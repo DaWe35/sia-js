@@ -36,9 +36,9 @@ var transaction = Sia.transaction.encodeTransaction(inputs, fee, changeAddress, 
 | Name                | Type             | Example                                                                   |
 | ------------------- | ---------------- | ------------------------------------------------------------------------- |
 | inputs              | Array            | https://siastats.info:3500/navigator-api/unspent_outputs/changeAddress    |
-| fee                 | Number (SiaCoin) | 0.0001 (In Siacoins not hasings)                                          |
+| fee                 | Number (Siacoin) | 0.0001 (In Siacoins not hastings)                                         |
 | changeAddress       | String           | Siacoin Address                                                           |
-| sendAmount          | Number (SiaCoin) | 10 (In Siacoins not hasings)                                              |
+| sendAmount          | Number (Siacoin) | 10 (In Siacoins not hastings)                                             |
 | destinationAddress  | String           | Siacoin Address                                                           |
 | privateKey          | String           | Siacoin Private Key                                                       |
 
