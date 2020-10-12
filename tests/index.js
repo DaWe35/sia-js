@@ -19,14 +19,19 @@ var send_amount = 10
 
 var receivers_address = 'df1b42c80b5f7a67331893fde0923a5071d6d7dff4c78baec547cf5ca4d314a1d78b6b1c8d42'
 
-var transaction = sia.transction.encodeTransaction(inputs_from_api, fee, senders_address, send_amount, receivers_address, senders_private_key, (res) => {
-  console.log(res)
-  fetch('http://escher-walrus.libtechnologies.io/broadcast', {
-    method: 'POST',
-    body: JSON.stringify([res])
-  }).then(remoteRes => remoteRes.jdon()).then(json => console.log(json))
+it('Transaction encoding', () => {
+    sia.transction.encodeTransaction(inputs_from_api, fee, senders_address, send_amount, receivers_address, senders_private_key, (res) => {
+        // success
+    })
 })
 
-it('Transaction encoding', () => {
-  if (1 === 1) return true
+describe('keypairs', () => {
+    var initial_keypair = {};
+    it('generate from seed', () => {
+        initial_keypair = sia.keyPair.generateFromSeed('this is a seed ...');
+    });
+    it('address from private key', () => {
+        var new_address = sia.keyPair.deriveAddress(initial_keypair.privateKey);
+        expect(new_address).to.equal(initial_keypair.address);
+    })
 })
