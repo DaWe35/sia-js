@@ -75,3 +75,7 @@ var transaction = Sia.transaction.encodeTransaction(inputs, fee, changeAddress, 
   ]
 }
 ```
+## TODO
+- function to verify a valid sia address
+- function to verify a valid sia private key
+- function to verify a valid sia public key
