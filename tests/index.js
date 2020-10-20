@@ -35,11 +35,8 @@ describe('keypairs', () => {
         expect(new_address).to.equal(initial_keypair.address);
     });
     it('generate secure random seed', () => {
-        const jsdomAlert = window.alert;  // remember the jsdom alert
-        window.alert = () => {};  // provide an empty implementation for window.alert
         var seed = sia.keyPair.generateRandomData();
         var seed_length = seed.length
         expect(seed_length).to.equal(32);
-        window.alert = jsdomAlert;  // restore the jsdom alert
     });
 })
