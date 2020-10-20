@@ -16,9 +16,6 @@
   "devDependencies": {
     "jest": "^26.5.3"
   },
-  "browser": {
-    "crypto": false
-  },
   "jest": {
     "testMatch": ["**/tests/index.js"]
   }
