@@ -33,5 +33,13 @@ describe('keypairs', () => {
     it('address from private key', () => {
         var new_address = sia.keyPair.deriveAddress(initial_keypair.privateKey);
         expect(new_address).to.equal(initial_keypair.address);
-    })
+    });
+    it('generate secure random seed', () => {
+        const jsdomAlert = window.alert;  // remember the jsdom alert
+        window.alert = () => {};  // provide an empty implementation for window.alert
+        var seed = sia.keyPair.generateRandomSeed();
+        var seed_length = seed.length
+        expect(seed_length).to.equal(32);
+        window.alert = jsdomAlert;  // restore the jsdom alert
+    });
 })
