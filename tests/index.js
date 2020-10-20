@@ -34,9 +34,16 @@ describe('keypairs', () => {
         var new_address = sia.keyPair.deriveAddress(initial_keypair.privateKey);
         expect(new_address).to.equal(initial_keypair.address);
     });
-    it('generate secure random seed', () => {
-        var seed = sia.keyPair.generateRandomData();
-        var seed_length = seed.length
-        expect(seed_length).to.equal(32);
+    it('generate random seed syncronously', () => {
+        var random = sia.keyPair.generateRandomData()
+        var randomLength = random.length
+        expect(randomLength).to.equal(32)
+    });
+    it('generate random seed asyncronously', () => {
+        sia.keyPair.generateRandomData(randomCallback)
+        function randomCallback(randomData) {
+            randomLength = randomData.length
+            expect(randomLength).to.equal(32);
+        }
     });
 })
