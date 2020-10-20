@@ -8,14 +8,6 @@ var Sia = require('sia-js');
 ```
 ### Key Derivation
 #### Generate secure random seed
-Asynchronously (recommended):
-```js
-sia.keyPair.generateRandomData(randomCallback)
-function randomCallback(randomData) {
-  console.log('Generated 32 random byte:', randomData)
-}
-```
-Synchronously:
 ```js
 var randomData = sia.keyPair.generateRandomData()
 ```
