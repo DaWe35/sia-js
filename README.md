@@ -7,6 +7,18 @@ nodejs lib for siacoin functions
 var Sia = require('sia-js');
 ```
 ### Key Derivation
+#### Generate secure random seed
+Asyncronously (recommended):
+```js
+sia.keyPair.generateRandomData(randomCallback)
+function randomCallback(randomData) {
+  console.log('Generated 32 random byte:', randomData)
+}
+```
+Syncronously:
+```js
+var randomData = sia.keyPair.generateRandomData()
+```
 #### From Seed
 ```js
 var keyPair = Sia.keyPair.generateFromSeed('seed string');
