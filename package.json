@@ -20,5 +20,8 @@
     "testMatch": [
       "**/tests/index.js"
     ]
-  }
+  },
+  "browser": {
+		"crypto": false
+	}
 }
