@@ -46,4 +46,10 @@ describe('keypairs', () => {
             expect(randomLength).toBe(32)
         }
     });
+    it('generate address from phase', () => {
+        var key = sia.keyPair.generateFromMnemonic('dogs addicted irony total licks logic rumble soil hectare pipeline yodel absorb tsunami donuts bacon axis bovine selfish fizzle wayside waking veteran vague cease foggy tucks welders pairing aching', [0,0,0,0,0,0,0,0])
+        expect(key.address).toEqual('e31cdb8fd42538d7d6bd8325795d44041921e8773bc48810c6571af6e7247ce60f5ba50cdce7');
+        expect(key.publicKey).toEqual('6f7b78880967be0d15d3c29cf5735b71174e99c80d0c11b5a947a6ba666d4025');
+        expect(key.privateKey).toEqual('c2fc9b345dc3696317af23b311e67941313ce0964506ea948248311be360c7bf6f7b78880967be0d15d3c29cf5735b71174e99c80d0c11b5a947a6ba666d4025');
+    });
 })
