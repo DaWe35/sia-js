@@ -52,4 +52,14 @@ describe('keypairs', () => {
         expect(key.publicKey).toEqual('6f7b78880967be0d15d3c29cf5735b71174e99c80d0c11b5a947a6ba666d4025');
         expect(key.privateKey).toEqual('c2fc9b345dc3696317af23b311e67941313ce0964506ea948248311be360c7bf6f7b78880967be0d15d3c29cf5735b71174e99c80d0c11b5a947a6ba666d4025');
     });
+    it('BytesToInt and IntToBytes', () => {
+        var bytes = [161,18,137,160,49,247,67,12,60,145,168,97,224,157,81,20,230,212,72,43,172,143,101,210,188,37,90,155,96,21,142,28];
+        var int = sia.mnemonics.bytesToInt(bytes)
+        var reconvertedBytes = sia.mnemonics.intToBytes(int)
+        console.log("[" + bytes.join(',') + "]")
+        console.log("[" + reconvertedBytes.join(',') + "]")
+        expect(bytes).toEqual(reconvertedBytes);
+    });
+    
+    
 })
