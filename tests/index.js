@@ -56,8 +56,6 @@ describe('keypairs', () => {
         var bytes = [161,18,137,160,49,247,67,12,60,145,168,97,224,157,81,20,230,212,72,43,172,143,101,210,188,37,90,155,96,21,142,28];
         var int = sia.mnemonics.bytesToInt(bytes)
         var reconvertedBytes = sia.mnemonics.intToBytes(int)
-        console.log("[" + bytes.join(',') + "]")
-        console.log("[" + reconvertedBytes.join(',') + "]")
         expect(bytes).toEqual(reconvertedBytes);
     });
     
